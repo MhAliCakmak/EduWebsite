@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" />
+</head>
+<body>
+    <div id="header">
+        <img src="resimler/logo 1.png"  alt="">
+    </div>
+    <div id="content_sag" ></div>
+    <div class="shadow">
+        
+    </div>
+    <img src="resimler/kadın2.png" id="sag" height="600" alt="">
+
+    <div id="content_sol"></div>
+    <div class="form-container">
+        <form action method="post">
+         <p class="a">Tekrar Hoşgeldiniz</p>
+         <div class="icon2">
+            <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-iconname></ion-icon></a>
+            <a href="https://www.google.com/"><ion-icon name="logo-google"></ion-iconname></ion-icon></a>
+        </div>
+         <p class="b">Giriş İçin Hesabınızı Giriniz</p>
+          <input type="email" name="email" required placeholder="Email">
+          <div class="password-container">
+            <input type="password" name="password" required placeholder="Password">
+            <i class="circular eye link icon" onclick="togglePassword()"></i>
+          </div>
+          <input id="check" type='checkbox' name='hatirla' value='on' class="check" >
+          <label for="check"><span class="icon"></span>Beni Hatırla </label>
+          <a href="#">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Şifremi Unuttum</a>
+          <input type="submit" name="submit" value="Giris" class="form-btn"><br><br>
+          <p>Hesabın Yok Mu?
+          <a href="register.html">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Kayıt Ol</a>
+          </p>
+        </form>
+
+    </div>
+    
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js">
+        
+            function togglePassword() {
+                var element = document.getElementById('password');
+                element.type = (element.type == 'password' ? 'text' : 'password');
+            }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+*{
+    outline: none;
+    box-sizing: border-box;
+}
+
+.shadow{
+    position: absolute;
+    top: 450px;
+    left: 320px;
+    width: 0px;
+    background-color: black;
+    height: 0px;
+    box-shadow:  0 0 100px 100px rgb(18, 69, 136);
+    z-index: -1;
+    
+}
+
+.content-sol{
+    width: 50%;
+    max-width: 900px;
+}
+
+.content-sag{
+    float: right;
+    position: relative;
+    bottom: 600px;
+    left: 100px;
+}
+.hesap a{
+    bottom: 750px;
+    left: 8000px;
+    text-decoration: none;
+}

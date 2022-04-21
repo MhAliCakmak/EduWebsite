@@ -1,0 +1,154 @@
+*{
+    outline: none;
+    box-sizing: border-box;
+}
+#content_sag{
+    width: 900px;
+    margin: auto;
+    max-width: 900px;
+}
+
+#sag{
+    float: right;
+    padding: 0 10px 10px 0;
+    
+
+}
+#content_sol{
+    margin-left: auto;
+}
+
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    padding-bottom: 200px;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+    background-position:center ;
+    background-attachment: fixed;
+    
+
+}
+.form-container form .a  {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-right: 12px;
+    text-align: center;
+    color: #333;
+}
+
+
+form {
+    display: block;
+    margin-top: 0em;
+    padding: 0 30px;
+}
+
+.a {
+    display: block;
+    font-size: 1.17em;
+   /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;*/
+    font-weight: bold;
+    text-align: center;
+   /* padding-bottom: 20%;*/    
+    
+    
+    
+}
+
+.b {
+    display: block;
+    font-size: 1.17em;
+   /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;*/
+    text-align: center;
+   /* padding-bottom: 10%;*/
+    
+    padding-top: -100%;
+   
+    
+}
+/*.form-container .p{
+    padding-bottom: 20%;
+
+}
+*/
+.form-container form input:not([type='checkbox']) , .form-container form select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px 1px rgb(212, 212, 212);
+    
+}
+
+.form-container form .form-btn {
+    background: white;
+    color: gray;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    color: -internal-light-dark(black, white);
+    padding: 1px 6px;
+    border-width: 0.5px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.icon2{
+    text-align: center;
+}
+
+.icon2 a{
+    font-size: 25px;
+    padding-right: 3px;
+    padding-top: 10px;
+    text-decoration: none;
+
+}
+.password-container{
+    position: relative;
+}
+.circular{
+    position:absolute;
+    top: 15px;
+    left: 350px;
+}
+
+.shadow{
+    position: absolute;
+    top: 300px;
+    right: 270px;
+    width: 0px;
+    background-color: black;
+    height: 0px;
+    box-shadow:  0 0 100px 100px rgb(18, 69, 136);
+    z-index: -1;
+    
+}
+
+
+
+

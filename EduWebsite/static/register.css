@@ -37,9 +37,9 @@ body{
 
 .content-right form input, .content-right form select {
     width: 50%;
-    padding: 10px 15px;
-    font-size: 17px;
-    margin: 8px 0;
+    padding: 6px 9px;
+    font-size: 16px;
+    margin: 8px;
     background: white;
     border-radius: 5px;
     border: none;
@@ -49,6 +49,7 @@ body{
 }
 .form-container{
     text-align: center;
+    
 }
 .content-right form .form-btn{
     width: 55%;
@@ -66,7 +67,7 @@ body{
     color: white;
 }
 .hesap{
-    padding-left: 450px;
+    padding-left: 0px;
     padding-bottom: 30px;
 }
 

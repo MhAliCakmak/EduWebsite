@@ -1,8 +1,13 @@
+from multiprocessing import context
 from django.shortcuts import render
-from questionApp.models import Question
+from questionApp.models import Question,Test
 # Create your views here.
-def index(request):
+
+
+def welcome(request):
+    return render(request,"anasayfa.html")
+def student(request):
     context={
-        "Question" : Question.objects.all()
+        "test":Test.objects.all()
     }
-    return render(request,)
+    return render(request,"question.html",context)

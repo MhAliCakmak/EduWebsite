@@ -1,6 +1,6 @@
 from dataclasses import field
 from django.contrib import admin
-from questionApp.models import Question,Categories
+from questionApp.models import Question,Categories,Test
 from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
 from rangefilter.filters import  DateTimeRangeFilter
 from questionApp.resources import QuestionResource
@@ -29,7 +29,7 @@ class S_sorumlusu(ImportExportModelAdmin):
     list_per_page=50
     actions=('admin_verified',)
     date_hierarchy= "update_date"
-    fields=(("title","slug"),"category","description",("is_active","admin_verified"),("level","answer"))
+    fields=(("title","slug"),("category"),"description",("is_active"),("level","answer"))
 
     def admin_verified  (self,request,queryset):
         count=queryset.update(admin_verified=True)
@@ -38,14 +38,20 @@ class S_sorumlusu(ImportExportModelAdmin):
     admin_verified.short_description="Admin onaylaması al"
 
 class C_sorumlusu(admin.ModelAdmin):#Category yönetimi için
-    
-    list_display=("name","section","soruSayisi")
-    list_filter=(("name",DropdownFilter),)
+    prepopulated_fields={"slug":("title",)}
+    list_display=("title","section","soruSayisi","questions")
+    list_filter=(("title",DropdownFilter),)
     search_fields=("section",)
-    ordering=("name","section")
+    ordering=("title","section")
     list_per_page=10
     inlines =(S_Inline,)
-    
-admin.site.register(Question,S_sorumlusu)
 
+class T_sorumlusu(admin.ModelAdmin):
+    prepopulated_fields={"slug":("title",)}
+    list_display=("title","information","soruSayisi","is_active","image")
+    list_filter=(("title",DropdownFilter),)
+
+
+admin.site.register(Question,S_sorumlusu)
 admin.site.register(Categories,C_sorumlusu)
+admin.site.register(Test,T_sorumlusu)

@@ -23,7 +23,8 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path("accounts",include("accounts.urls")),
+    path("accounts/",include("accounts.urls")),
+    path("accounts/",include("django.contrib.auth.urls")),
     path("",include("questionApp.urls")),
     
     

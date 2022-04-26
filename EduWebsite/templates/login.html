@@ -22,21 +22,26 @@
 
     <div id="content_sol"></div>
     <div class="form-container">
-        <form action method="post">
-         <p class="a">Tekrar Hoşgeldiniz</p>
+        <form action="{% url 'login'%}" method="post">
+            {% csrf_token %}
+        
+        <p class="a">Tekrar Hoşgeldiniz</p>
+            
          <div class="icon2">
             <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-iconname></ion-icon></a>
             <a href="https://www.google.com/"><ion-icon name="logo-google"></ion-iconname></ion-icon></a>
         </div>
          <p class="b">Giriş İçin Hesabınızı Giriniz</p>
-          <input type="email" name="email" required placeholder="Email">
+          <input type="name" name="username" required placeholder="User Name">
           <div class="password-container">
             <input type="password" name="password" required placeholder="Password">
             <i class="circular eye link icon" onclick="togglePassword()"></i>
           </div>
-          <input id="check" type='checkbox' name='hatirla' value='on' class="check" >
-          <label for="check"><span class="icon"></span>Beni Hatırla </label>
-          <a href="#">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Şifremi Unuttum</a>
+          <div><input id="check" type='checkbox' name='hatirla' value='on' class="check" >
+            <label for="check"><span class="icon"></span>Beni Hatırla </label>
+            
+            <span ><a href="#" >&emsp;&emsp;&emsp;&emsp;&emsp;Sifremi Unuttum</a></span></div>
+          
           <input type="submit" name="submit" value="Giris" class="form-btn"><br><br>
           <p>Hesabın Yok Mu?
           <a href="{% url 'register' %}">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Kayıt Ol</a>

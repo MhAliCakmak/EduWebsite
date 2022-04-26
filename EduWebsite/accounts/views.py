@@ -2,30 +2,64 @@ import email
 import re
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User,auth
-
+from django.contrib import messages
+from django.contrib.auth import authenticate,login as auth_login,logout
 
 
 # Create your views here.
 def login(request):
+    if request.method == "POST":
+        username=request.POST["username"]
+        password=request.POST["password"]
+        user=authenticate(request,username=username,password=password)
 
-    return render(request,"login.html")
+        if user is not None:
+            first_name=user.first_name
+            auth_login(request,user)  
+            messages.success(request,"Giris Basarılı")
+            return(request,"login.html",{"first_name":first_name})            
+        else:
+            messages.error(request,"Bad Credentials")
+            return redirect("/")
+    return render(request,"login.html",{})
 
 
 def register(request):
+    
     if request.method == "POST":
-         first_name = request.POST["firstname"]
-         last_name = request.POST["lastname"]
+         first_name = request.POST["first_name"]
+         last_name = request.POST["last_name"]
          username = request.POST["username"]
-         
-         e_mail = request.POST["email"]
+         email = request.POST["email"]
          password1 = request.POST["password1"]
          password2 = request.POST["password2"]
-      
+         user_type=request.POST["user_type"]
+        
+         if user_type=="Öğrenci":
+            user=User.objects.create_user(first_name=first_name,username=username,last_name=last_name,email=email,password=password1)
+            user.save()
+            messages.success(request,"Your account has been successfully created")
+            return redirect("login")
          
-         user=User.objects.create_user(user_name=username,first_name=first_name,last_name=last_name,email=email,password=password1)
-         user.save()
-         print("kullanıcı oluşturudu")
-         return redirect("/")
+         elif user_type=="Admin":    
+             user=User.objects.create_superuser(first_name=first_name,username=username,last_name=last_name,email=email,password=password1)
+             user.save()
+             messages.success(request,"Your account has been successfully created")
+             return redirect("/admin")
+         
+         elif user_type=="Sınav Sorumlusu":
+             user=User.objects.create_user()
+            
+         user.first_name=first_name
+         user.last_name=last_name
+         
+         
+         
 
     else:
         return render(request,"register.html")
+
+def signout(request):
+    logout(request)
+    messages.success("Başarılı çıkıs")
+    return redirect("/")

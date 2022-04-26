@@ -6,7 +6,7 @@ from questionApp.models import Question,Test
 
 def welcome(request):
     return render(request,"anasayfa.html")
-def student(request):
+def soru(request):
     context={
         "test":Test.objects.all()
     }

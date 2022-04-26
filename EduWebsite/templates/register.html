@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="logo">
+    <div class="logo" style="max-width: 95%">
         <a href="{% url 'welcome' %}"><img src='{% static "resimler/answer.svg" %}'  class="img-fluid" width="100" alt="logo"></a>
     </div>
     <div class="content">
@@ -35,7 +35,14 @@
           <input type="email" name="email" required placeholder="E-mail">
           <input type="password" name="password1" required placeholder="Password">
           <input type="password" name="password2" required placeholder="Confirm Password">
-         
+          <input list="datalistOptions" id="exampleDataList" placeholder="Type to search..." name="user_type">
+          <datalist id="datalistOptions" >
+            <option value="Öğrenci">
+            <option value="Sınav Sorumlusu">
+            <option value="Admin">
+            
+            
+          </datalist>
           <input type="submit" name="submit" value="Hesap Oluştur" class="form-btn">
         </div>
           

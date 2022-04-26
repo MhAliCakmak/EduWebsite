@@ -23,13 +23,13 @@
   <div class="row">
     <div class="col">
       <div class="card" style="width: 18rem;margin:10px">
-{% for test in Test %}
-    <img src="{{ test.image }}" class="card-img-top" alt="Zor seviye">
-    <div class="card-body">
 
-    <h5 class="card-title">{{ test.title }}</h5>
-    <p class="card-text">{{test.information}}.</p>
-{% endfor %}
+    <img src="{% static 'resimler/answer.svg'}" class="card-img-top" alt="Zor seviye">
+    <div class="card-body">
+      {% if user.is_authenticated %}
+    <h5 class="card-title">{{ user.username }}</h5>
+    <p class="card-text">merhaba.</p>
+    {% endif %}
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>

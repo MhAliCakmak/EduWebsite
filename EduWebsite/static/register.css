@@ -13,9 +13,10 @@ body{
 }
 
 .content-right{
-    width: 50%;
-    padding-top: 30px;
+    width: 63%;
+    padding-top: 67px;
 }
+
 
 .a {
     display: block;
@@ -34,17 +35,20 @@ body{
     padding: 0 10px 20px 0;
     font-size: 30px;
 }
-
+.img-fluid {
+    max-width: 95%;
+    height: auto;
+}
 .content-right form input, .content-right form select {
-    width: 50%;
+    width: 45%;
     padding: 6px 9px;
     font-size: 16px;
-    margin: 8px;
+    margin: 16px;
     background: white;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 0 5px 1px rgb(212, 212, 212);
-    height: 30px;
+    box-shadow: 0 0 5px 1px rgb(212 212 212);
+    height: 37px;
     
 }
 .form-container{
@@ -52,14 +56,14 @@ body{
     
 }
 .content-right form .form-btn{
-    width: 55%;
-    height: 45px;
+    width: 53%;
+    height: 55px;
     padding: 10px 15px;
     font-size: 17px;
-    margin: 8px 0;
+    margin: 46px 0;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 0 5px 1px rgb(212, 212, 212);
+    box-shadow: 0 0 5px 1px rgb(212 212 212);
     background: #254175;
     text-transform: capitalize;
     font-size: 20px;

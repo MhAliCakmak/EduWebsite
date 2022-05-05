@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'question.css' %}">
+    <link rel="stylesheet" href="{% static 'testGosterme.css' %}">
 </head>
 <body>
     <nav>
@@ -29,19 +29,18 @@
        
             
     
-    {%for i in tests %}
+
     
     <div class="box-3" class="img-fluid">
-            <img src="{{ i.image.url }}"   alt="{{i.test_slug}}">
-            <h4>{{i.title}} <br> Bilimleri <br></h4>  
-            <h4><br>Soru sayisi<br>{{i.soruSayisi}}  <br></h4>
-            <a href="{% url 'test_detail' i.test_slug  %}">Go</a> 
+            <img src="{{ test_detail.image.url }}"   alt="{{test_detail.test_slug}}">
+            <h4>{{test_detail.title}} <br> Bilimleri <br></h4>  
+            <h4><br>Soru sayisi<br>{{test_detail.soruSayisi}}  <br></h4>
+            <a href="{% url 'questions' test_detail.test_slug %}">Go</a> 
         </div> 
-    {% endfor %}
+ 
     </div>
     
  
-    
     
 </body>
 </html>

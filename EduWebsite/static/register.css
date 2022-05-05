@@ -1,5 +1,6 @@
 
 body{
+    height:100vh;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,7 +14,7 @@ body{
 }
 
 .content-right{
-    width: 63%;
+    width: 84%;
     padding-top: 67px;
 }
 

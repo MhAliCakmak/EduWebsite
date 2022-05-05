@@ -24,7 +24,7 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path("accounts/",include("accounts.urls")),
-    path("accounts/",include("django.contrib.auth.urls")),
+    
     path("",include("questionApp.urls")),
     
     
@@ -35,5 +35,5 @@ urlpatterns = [
 ]
 
 admin.site.site_title="Admin"
-admin.site.site_header="Admin Soru Yönetim Portalı"
+admin.site.site_header="Admin Yönetim Portalı"
 admin.site.index_title="Admin Paneline Hoşgeldiniz"

@@ -4,6 +4,8 @@ urlpatterns =[
 
 
 #path(route, view, opt(kisayol ismi))
-path("soru/",views.soru,name="soru"),
+path("test_list/",views.test_list,name="test_list"),
+path("<slug:test_slug>",views.test_detail,name="test_detail"),
+path("<slug:test_slug>/<slug:quest_slug>",views.question,name="questions"),
 path("",views.welcome,name="welcome"),
 ]

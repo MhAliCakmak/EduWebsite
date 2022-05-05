@@ -14,13 +14,13 @@ class Question(models.Model):
     
     description=RichTextField()
     category=models.ForeignKey(to="questionApp.Categories", related_name="questions",on_delete=models.CASCADE,null=True)
-   
+    
     level=models.PositiveIntegerField(max_length=5,default=5,null=2)
     is_active=models.BooleanField(default=False)
     admin_verified=models.BooleanField(default=False)
     add_date=models.DateTimeField(auto_now_add=True)
     update_date=models.DateTimeField(auto_now=True)
-    slug=models.SlugField(null=True,blank=True)
+    question_slug=models.SlugField(null=True,blank=True)
     answer=models.CharField(max_length=1,null="A")
 
     class Meta:
@@ -37,7 +37,7 @@ class Categories(models.Model):
     section=models.CharField(max_length=50)
     
     is_active=models.BooleanField(default=False,null=True)
-    slug=models.SlugField(null=True,blank=True)
+    category_slug=models.SlugField(null=True,blank=True)
 
     class Meta:
         verbose_name="Kategori"
@@ -54,10 +54,10 @@ class Categories(models.Model):
 class Test(models.Model):
     title=models.CharField(max_length=50)
     information=models.TextField(max_length=250,default="Fen Bilimleri dersi standart sorular",null=True)
-    slug=models.SlugField(null=True,blank=True)
-    questions=models.ManyToManyField(to="questionApp.Question",related_name="tests")
+    test_slug=models.SlugField(null=True,blank=True)
+    questions=models.ManyToManyField(Question)
     is_active=models.BooleanField(default=False,null=True)
-    image=models.ImageField(upload_to="Test")
+    image=models.ImageField(upload_to="static/Test")
     class Meta:
         verbose_name="Test"
         verbose_name_plural="Testler"
@@ -68,3 +68,4 @@ class Test(models.Model):
     def soruSayisi(self):
         number=self.questions.count()
         return number
+    

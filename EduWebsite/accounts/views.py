@@ -1,12 +1,12 @@
 import email
 import re
+
+# Create your views here.
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth import authenticate,login as auth_login,logout as auth_logout
 from django.contrib.auth.decorators import login_required
-
-# Create your views here.
 def login(request):
     if request.method == "POST":
         username=request.POST["username"]
@@ -20,7 +20,7 @@ def login(request):
             return redirect("test_list")            
         else:
             messages.error(request,"Bad Credentials")
-            return redirect("/")
+            return redirect("login")
     return render(request,"login.html")
 
 
@@ -61,5 +61,5 @@ def register(request):
 @login_required
 def logout(request):
     auth_logout(request)
-    messages.success("Başarılı çıkıs")
-    return redirect("logout")
+    messages.success(request,"Başarılı çıkıs")
+    return redirect("welcome")

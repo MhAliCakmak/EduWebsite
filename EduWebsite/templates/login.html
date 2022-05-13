@@ -35,17 +35,29 @@
           <input type="name" name="username" required placeholder="User Name">
           <div class="password-container">
             <input type="password" name="password" required placeholder="Password">
+           
             <i class="circular eye link icon" onclick="togglePassword()"></i>
           </div>
+          {% if form.errors %}
+          {% for field in form %}
+               {% for error in field.errors %}
+                     <div class="alert alert-danger">
+                          <strong>{{ error}}</strong>
+                     </div>
+              {% endfor %}
+           {% endfor %}
+       {% endif %}
           <div><input id="check" type='checkbox' name='hatirla' value='on' class="check" >
+
             <label for="check"><span class="icon"></span>Beni Hatırla </label>
             
             <span ><a href="#" >&emsp;&emsp;&emsp;&emsp;&emsp;Sifremi Unuttum</a></span></div>
-          
+
           <input type="submit" name="submit" value="Giris" class="form-btn"><br><br>
           <p>Hesabın Yok Mu?
           <a href="{% url 'register' %}">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Kayıt Ol</a>
           </p>
+   
         </form>
 
     </div>

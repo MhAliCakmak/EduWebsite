@@ -25,11 +25,13 @@ def test_detail(request,test_slug):
     }
     return render(request,"testGosterme.html",context)
 
-def question(request,test_slug,quest_slug):
+def question(request,test_slug):
     test=Test.objects.get(test_slug=test_slug)
    
     context={
-        "question":test.questions.get(question_slug=quest_slug),
+        "question":test.questions.all(),
         
     }
+
+        
     return render(request,"soruTest.html",context)

@@ -1,6 +1,7 @@
 from tkinter import CASCADE
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 
 
@@ -15,7 +16,7 @@ class Question(models.Model):
     description=RichTextField()
     category=models.ForeignKey(to="questionApp.Categories", related_name="questions",on_delete=models.CASCADE,null=True)
     
-    level=models.PositiveIntegerField(max_length=5,default=5,null=2)
+    level=models.PositiveIntegerField(default=5,null=2)
     is_active=models.BooleanField(default=False)
     admin_verified=models.BooleanField(default=False)
     add_date=models.DateTimeField(auto_now_add=True)
@@ -58,6 +59,7 @@ class Test(models.Model):
     questions=models.ManyToManyField(Question)
     is_active=models.BooleanField(default=False,null=True)
     image=models.ImageField(upload_to="static/Test")
+    user=models.ManyToManyField(User,blank=True,related_name="Test_joined")
     class Meta:
         verbose_name="Test"
         verbose_name_plural="Testler"

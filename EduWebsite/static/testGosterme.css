@@ -130,8 +130,8 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .box-3{
-    width: 17%;
-    height: 350px;
+    width: 20%;
+    height: 517px;
     box-sizing: border-box;
     background-color: #F20303;
     border-radius: 5px;
@@ -139,8 +139,8 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .box-3 img{
-    width: 70%;
-    height: 100px;
+    width: 79%;
+    height: 188px;
     border: 3px solid gray;
     text-align: center;
     display: flex;

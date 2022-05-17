@@ -1,16 +1,13 @@
 # YazilimYapimi
 ## Bilgilendirme
-Bu projemizde 6 sigma ile sınav sistemi hazırladık .Hazırladağımız bu proje öğrencilerin kendilerini geliştirebildiği eksiklerini kolayca tespit edildiği
+Bu projemizde sınav sistemi hazırladık .Hazırladağımız bu proje öğrencilerin kendilerini geliştirebildiği eksiklerini kolayca tespit edildiği
 bir sistem üzerine kuruludur . Öğrenci çözümlediği sorular üzerinden bir analiz raporu alarak hangi konularda ne kadar başarılı olduğunu görebilmektedir.
 Yapamadığı sorulara tekrar dönebileceği bir sistem olduğu için eksik olduğu konulara tekrar çalışıp yapamadığı soruya tekrar dönüp konuyu öğrenip 
 öğrenmediğini tespit edebilir.
 
 ### Amaç:
 >Esas amaç öğrencilerin kolay bir şekilde kendilerini geliştirme ortamı sunabilmek.
-
-
-### Projenin Kapsamı:
->6 sigma kuralını ve rapor barındıran bir sistemdir. 
+ 
 
 ## Teknik Bilgilendirme
 

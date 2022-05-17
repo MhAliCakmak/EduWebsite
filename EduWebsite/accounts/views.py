@@ -39,7 +39,7 @@ def register(request):
             user=User.objects.create_user(first_name=first_name,username=username,last_name=last_name,email=email,password=password1)
             user.save()
             messages.success(request,"Your account has been successfully created")
-            return redirect("test_list")
+            return redirect("login")
          
          elif user_type=="Admin":    
              user=User.objects.create_superuser(first_name=first_name,username=username,last_name=last_name,email=email,password=password1)
@@ -48,8 +48,8 @@ def register(request):
              return redirect("admin")
          
          elif user_type=="Sınav Sorumlusu":
-             user=User.objects.create_user()
-            
+             user=User.objects.create_user(first_name=first_name,username=username,last_name=last_name,email=email,password=password1,is_staff=True)
+             return ("login")
          user.first_name=first_name
          user.last_name=last_name
          

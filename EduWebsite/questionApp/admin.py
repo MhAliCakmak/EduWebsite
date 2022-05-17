@@ -1,5 +1,6 @@
 from dataclasses import field
 from django.contrib import admin
+
 from questionApp.models import Question,Categories,Test
 from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
 from rangefilter.filters import  DateTimeRangeFilter
@@ -27,7 +28,7 @@ class S_sorumlusu(ImportExportModelAdmin):
     list_editable=("is_active",)
     search_fields=("title",)
     prepopulated_fields={"question_slug":("title",)}
-    list_per_page=50
+    list_per_page=25
     actions=('admin_verified',)
     date_hierarchy= "update_date"
     fields=(("title","question_slug"),("category",),"description",("is_active"),("level","answer"))
@@ -50,6 +51,7 @@ class C_sorumlusu(admin.ModelAdmin):#Category yönetimi için
 
 class T_sorumlusu(admin.ModelAdmin):
     prepopulated_fields={"test_slug":("title",)}
+    
     list_display=("title","information","selected_soru","soruSayisi","is_active","image")
     list_filter=(("title",DropdownFilter),)
     

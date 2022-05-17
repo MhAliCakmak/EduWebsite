@@ -7,27 +7,46 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+ANSWER_CHOICES =(
+    ("A", "A"),
+    ("B", "B"),
+    ("C", "C"),
+    ("D", "D"),
+    ("G","G")
+   
 
+
+)
 
 class Question(models.Model):
     title=models.CharField(max_length=250)
-    
-    
+
     description=RichTextField()
     category=models.ForeignKey(to="questionApp.Categories", related_name="questions",on_delete=models.CASCADE,null=True)
     
-    level=models.PositiveIntegerField(default=5,null=2)
-    is_active=models.BooleanField(default=False)
+    
+    yazar=models.ForeignKey(User,null=True,related_name="users",on_delete=models.CASCADE)
+
+    is_active=models.BooleanField(default=True)
     admin_verified=models.BooleanField(default=False)
     add_date=models.DateTimeField(auto_now_add=True)
     update_date=models.DateTimeField(auto_now=True)
     question_slug=models.SlugField(null=True,blank=True)
-    answer=models.CharField(max_length=1,null="A")
+    
+    answer=models.CharField(choices=ANSWER_CHOICES,max_length=1)
+    user_answer=models.CharField(choices=ANSWER_CHOICES,default="G",null="G",max_length=1)
 
     class Meta:
         verbose_name="Soru"
         verbose_name_plural="Sorular"
-
+   
+    @property
+    def dogruMu(self):
+        if self.answer==self.user_answer:
+            return True
+        elif self.answer!=self.user_answer:
+            return False
+        
     def __str__(self):
         return self.title
 
@@ -51,6 +70,9 @@ class Categories(models.Model):
     def soruSayisi(self):
         number=self.questions.count()
         return number
+
+
+
 
 class Test(models.Model):
     title=models.CharField(max_length=50)

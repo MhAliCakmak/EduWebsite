@@ -13,7 +13,8 @@ Yapamadığı sorulara tekrar dönebileceği bir sistem olduğu için eksik oldu
 
 ## Teknik Bilgilendirme
 
-- Projemizde bulunan branchler bölümüne tıklayarak ilgili branche göz gezdirebilir ve indiribelirsiniz.
+- Projeyi pythonun Django frameworkunu kullanarak yaptık . Projeyi klonladıktan sonra sanal ortamınızı ayarlamanız gerekiyor bunun için "env/Scripts/activate"
+yazarak terminale ulaşabilirsiniz ardından requirements.txt de yazan methodları indirmeniz gerekiyor .
 
 ## Gelecekteki Geliştirmeler
 Sistemin güvenliğini sağlamak amacıyla Blockchain teknoljisini uygulamamıza entegre edecez . 

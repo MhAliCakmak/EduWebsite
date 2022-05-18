@@ -21,7 +21,8 @@ Sistemin güvenliğini sağlamak amacıyla Blockchain teknoljisini uygulamamıza
 Bu sayede yapılan siber saldırıların başarısız ve güvenilir bilgiye ulaşmış olacağız.
 
 
-
+## Video 
+https://www.youtube.com/watch?v=aQ_KaLwwKy0
 
 
 ## Ekip Arkadaşları
